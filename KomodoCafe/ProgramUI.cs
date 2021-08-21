@@ -19,6 +19,14 @@ namespace KomodoCafe
         }
         public void SeedContent()
         {
+
+            Console.Write("Seeding Content");
+            for (int i = 0; i < 15; i++)
+            {
+                Thread.Sleep(50);
+                Console.Write(".");
+            }
+
             MenuItem item1 = new MenuItem(1, "item name 1", "This is a classic item number 1, straight out the dinglebop.", "pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 13.95);
             MenuItem item2 = new MenuItem(1, "item name 1", "This is a customer-favorite, fresh out the uh machine.", "corn, pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 19.95);
             MenuItem item3 = new MenuItem(1, "item name 1", "This is a special item only made here at Komodo Cafe, it's home baked inside our famous thing.", "so many beans, pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 23.95);

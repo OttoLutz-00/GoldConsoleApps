@@ -1,7 +1,0 @@
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\bin\Debug\KomodoCafe.exe.config
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\bin\Debug\KomodoCafe.exe
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\bin\Debug\KomodoCafe.pdb
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\obj\Debug\KomodoCafe.csproj.AssemblyReference.cache
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\obj\Debug\KomodoCafe.csproj.CoreCompileInputs.cache
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\obj\Debug\KomodoCafe.exe
-C:\Users\Ottom\source\repos\GoldBadgeChallenges\KomodoCafe\obj\Debug\KomodoCafe.pdb
