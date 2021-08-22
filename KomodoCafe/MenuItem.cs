@@ -28,9 +28,9 @@ namespace KomodoCafe
         }
         public override string ToString()
         {
-            return $" - #{ItemNumber}, {ItemName} - - - - - - - - {ItemPrice}\n" +
-                $" ·{ItemDescription}\n" +
-                $" ·{SecretIngredients}\n";
+            return $" - #{ItemNumber}, {ItemName} - - - - - - - - ${ItemPrice}\n" +
+                $"   ·{ItemDescription}\n" +
+                $"   ·{SecretIngredients}\n";
         }
     }
 }
