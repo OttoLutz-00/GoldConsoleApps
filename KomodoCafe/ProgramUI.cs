@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-//TODO
-//input validation
 namespace KomodoCafe
 {
     class ProgramUI
@@ -27,9 +25,10 @@ namespace KomodoCafe
                 Thread.Sleep(50);
                 Console.Write(".");
             }
-            MenuItem item1 = new MenuItem(1, "French Bread", "This is a classic item number 1, straight out the dinglebop.", "pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 13.95);
-            MenuItem item2 = new MenuItem(2, "Ravioli", "This is a customer-favorite, fresh out the uh machine.", "corn, pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 19.95);
-            MenuItem item3 = new MenuItem(3, "Big Pizza", "This is a special item only made here at Komodo Cafe, it's home baked inside our famous thing.", "so many beans, pepper, salt, tomatoes, ketchup, lettuce, mayo, and non-digestable plastic", 23.95);
+            MenuItem item1 = new MenuItem(1, "Bread Loaf", "This is a fresh baked loaf of bread from our own dough.", "Flour, yeast, nuts, water, olive oil, and eggs.", 11.55);
+            MenuItem item2 = new MenuItem(22, "Chocolate Muffin", "A favorite among customers, fresh, fluffy muffin sprinkled with delicious chocolate chips.", "Komodo Cafe muffin mix, milk, butter, and mini chocolate chips.", 7.30);
+            MenuItem item3 = new MenuItem(33, "Komodo Coffee", "Home brewed columbian coffee", "water, coffee beans.", 6.75);
+
             _repo.AddItemToMenu(item1);
             _repo.AddItemToMenu(item2);
             _repo.AddItemToMenu(item3);
@@ -172,16 +171,24 @@ namespace KomodoCafe
         public void DeleteItemFromMenu()
         {
             Console.Clear();
-            Console.WriteLine(" What is the item number of the item you want to remove from the menu?\n" +
+            Console.Write("\n What is the item number of the item you want to remove from the menu?\n\n" +
                 " Item Number: ");
             string input = Console.ReadLine();
             //this will make sure the itemNumber is valid and within the specified maximum of 2 digits. and can be parsed into an int without error.
             input = validateInputForNumber(input,2);
-            string itemNumber = _repo.GetMenuItemByItemNumber(Convert.ToInt32(input)).ItemName;
-            if(_repo.RemoveItemFromMenu(Convert.ToInt32(input)))
-                Console.WriteLine($"{itemNumber} removed successfully");
+            if(_repo.DoesItemExist(Convert.ToInt32(input)))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\n { _repo.GetMenuItemByItemNumber(Convert.ToInt32(input)).ItemName} removed successfully\n");
+                _repo.RemoveItemFromMenu(Convert.ToInt32(input));
+                Console.ForegroundColor = ConsoleColor.White;
+            }
             else
-                Console.WriteLine("Could not find an item with that number.");
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n Could not find an item with that number.\n");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
             ContinueMessage();
         }
         //prints error message for invalid input
@@ -198,6 +205,5 @@ namespace KomodoCafe
             Console.Write(" press any key to continue... ");
             Console.ReadKey();
         }
-
     }
 }

@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace KomodoCafe
 {
-    class MenuRepository
+    public class MenuRepository
     {
         private readonly List<MenuItem> _menuDirectory = new List<MenuItem>();
-        
         //CRUD
-
         //Create
         public void AddItemToMenu(MenuItem item)
         {
             _menuDirectory.Add(item);
         }
-
         //Read
         public List<MenuItem> GetMenu()
         {
@@ -33,8 +30,17 @@ namespace KomodoCafe
             Console.WriteLine("There was no item on the menu with that item number.");
             return null;
         }
-
-        //Update - no updates needed as specified in directions
+        //same as function above but it will return just a bool instead of the actual item.
+        public bool DoesItemExist(int id)
+        {
+            foreach (MenuItem item in _menuDirectory)
+            {
+                if (item.ItemNumber == id)
+                    return true;
+            }
+            return false;
+        }
+        //Update - no updates needed as specified in the directions
         //Delete
         public bool RemoveItemFromMenu(int id)
         {
@@ -42,7 +48,5 @@ namespace KomodoCafe
                 return true;
             return false;
         }
-
-
     }
 }

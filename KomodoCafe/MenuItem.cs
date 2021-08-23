@@ -8,12 +8,11 @@ namespace KomodoCafe
 {
     public class MenuItem
     {
-        //fields, not sure if every challenge needs a field, but just in case i am pretending that in this challenge the ingredients are something secret, like the Krabby Patty Formula, and should not be easily changed.
-        private readonly string SecretIngredients;
         //properties
         public int ItemNumber { get; set; }
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }
+        public string ItemIngredients { get; set; }
         public double ItemPrice { get; set; }
 
         //constructors
@@ -23,14 +22,14 @@ namespace KomodoCafe
             ItemNumber = itemNumber;
             ItemName = itemName;
             ItemDescription = itemDescription;
-            SecretIngredients = ingredients;
+            ItemIngredients = ingredients;
             ItemPrice = price;
         }
         public override string ToString()
         {
             return $" - #{ItemNumber}, {ItemName} - - - - - - - - ${ItemPrice}\n" +
                 $"   ·{ItemDescription}\n" +
-                $"   ·{SecretIngredients}\n";
+                $"   ·{ItemIngredients}\n";
         }
     }
 }
