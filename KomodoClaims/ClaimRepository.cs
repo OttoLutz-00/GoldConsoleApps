@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace KomodoClaims
 {
-    class ClaimRepository
+    public class ClaimRepository
     {
         //field
         private readonly List<Claim> _claimRepo = new List<Claim>();
         //CRUD
         //Create
-        public void AddClaimToRepository(Claim claim)
+        public bool AddClaimToRepository(Claim claim)
         {
+            if (claim != null)
+            {
             _claimRepo.Add(claim);
+                return true;
+            }
+            return false;
         }
         //Read
         public List<Claim> GetClaimRepository()
@@ -58,7 +63,7 @@ namespace KomodoClaims
             return false;
         }
         //Delete
-        public bool RemoveItemFromMenu(int id)
+        public bool RemoveClaimByID(int id)
         {
             if (_claimRepo.Remove(GetClaimByClaimNumber(id)))
                 return true;
