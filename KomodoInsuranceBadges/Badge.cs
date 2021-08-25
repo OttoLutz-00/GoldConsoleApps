@@ -10,5 +10,11 @@ namespace KomodoInsuranceBadges
     {
         public int BadgeID { get; set; }
         public List<string> AccessibleDoors { get; set; }
+        public Badge() { }
+        public Badge(int id, List<string> list)
+        {
+            BadgeID = id;
+            AccessibleDoors = list;
+        }
     }
 }
