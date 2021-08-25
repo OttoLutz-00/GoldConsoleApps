@@ -68,8 +68,8 @@ namespace GoldBadgeTests
         public void GetClaimRepositoryReturns_AndGetClaimByClaimIDReturns()
         {
             //Arrange
-            List<Claim> newList;
-            newList = _claimRepository.GetClaimRepository();
+            
+             Queue<Claim> newList = _claimRepository.GetClaimRepository();
             claim1 = new Claim(73, ClaimType.Theft, "Stolen pancake.", 24.00, new DateTime(2021, 7, 4), new DateTime(2021, 8, 2));
             //Act
             //Assert
@@ -96,10 +96,10 @@ namespace GoldBadgeTests
             //Arrange
             Arrange();
             //Act
-            Assert.IsTrue(_claimRepository.DoesItemExist(3));
-            _claimRepository.RemoveClaimByID(3);
+            Assert.IsTrue(_claimRepository.DoesItemExist(1));
+            _claimRepository.RemoveNextClaim();
             //Assert
-            Assert.IsFalse(_claimRepository.DoesItemExist(3));
+            Assert.IsFalse(_claimRepository.DoesItemExist(1));
         }
     }
 }

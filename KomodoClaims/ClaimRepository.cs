@@ -9,31 +9,31 @@ namespace KomodoClaims
     public class ClaimRepository
     {
         //field
-        private readonly List<Claim> _claimRepo = new List<Claim>();
+        private readonly Queue<Claim> _claimRepo = new Queue<Claim>();
         //CRUD
         //Create
         public bool AddClaimToRepository(Claim claim)
         {
             if (claim != null)
             {
-            _claimRepo.Add(claim);
+            _claimRepo.Enqueue(claim);
                 return true;
             }
             return false;
         }
         //Read
-        public List<Claim> GetClaimRepository()
+        public Queue<Claim> GetClaimRepository()
         {
             return _claimRepo;
         }
         public Claim GetClaimByClaimNumber(int id)
         {
-            foreach (Claim item in _claimRepo)
+            foreach (Claim claim in _claimRepo)
             {
-                if (item.ClaimID == id)
-                    return item;
+                if (claim.ClaimID == id)
+                    return claim;
             }
-            Console.WriteLine("There was no claim with that number.");
+            Console.WriteLine("\nThere was no claim with that number.");
             return null;
         }
         //same as function above but it will return just a bool instead of the actual claim.
@@ -45,6 +45,10 @@ namespace KomodoClaims
                     return true;
             }
             return false;
+        }
+        public Claim PeekNextClaim()
+        {
+            return _claimRepo.Peek();
         }
         //Update
         public bool UpdateClaimByID(int id, Claim newClaim)
@@ -63,11 +67,9 @@ namespace KomodoClaims
             return false;
         }
         //Delete
-        public bool RemoveClaimByID(int id)
+        public void RemoveNextClaim()
         {
-            if (_claimRepo.Remove(GetClaimByClaimNumber(id)))
-                return true;
-            return false;
+            _claimRepo.Dequeue();
         }
     }
 }

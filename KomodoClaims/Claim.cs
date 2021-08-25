@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KomodoClaims
 {
-    public enum ClaimType { Car, Home, Theft};
+    public enum ClaimType { NA, Car, Home, Theft};
     public class Claim
     {
         public int ClaimID { get; set; }
@@ -41,7 +41,7 @@ namespace KomodoClaims
         {
             string incDate = $"{DateOfIncident.Month}/{DateOfIncident.Day}/{DateOfIncident.Year}";
             string clDate = $"{DateOfClaim.Month}/{DateOfClaim.Day}/{DateOfClaim.Year}";
-            return String.Format(" | {0,-6} | {1,-11} | {2,-30} | {3,-13} | {4,-13} | {5,-13} | {6,-7} |", ClaimID, ClaimType, Description, ClaimAmount, incDate, clDate, IsValid);
+            return String.Format(" | {0,-6} | {1,-10} | {2,-30} | ${3,-12} | {4,-13} | {5,-13} | {6,-7} |", ClaimID, ClaimType, Description, ClaimAmount, incDate, clDate, IsValid);
         }
     }
 }
