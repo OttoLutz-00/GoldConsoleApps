@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldBadgeTests", "GoldBadge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoClaims", "KomodoClaims\KomodoClaims.csproj", "{5EA88534-5E24-4AE6-A208-C6D31541D32F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoInsuranceBadges", "KomodoInsuranceBadges\KomodoInsuranceBadges.csproj", "{454A8CB1-559D-480A-AF1E-25D80ADAC264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5EA88534-5E24-4AE6-A208-C6D31541D32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EA88534-5E24-4AE6-A208-C6D31541D32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EA88534-5E24-4AE6-A208-C6D31541D32F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454A8CB1-559D-480A-AF1E-25D80ADAC264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454A8CB1-559D-480A-AF1E-25D80ADAC264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454A8CB1-559D-480A-AF1E-25D80ADAC264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454A8CB1-559D-480A-AF1E-25D80ADAC264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
