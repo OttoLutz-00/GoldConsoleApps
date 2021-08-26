@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KomodoInsuranceBadges
+namespace KomodoInsuranceBadges2
 {
     public class Badge
     {

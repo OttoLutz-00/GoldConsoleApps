@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="KomodoClaimsRepositoryTests.cs" />
     <Compile Include="KomodoCafeMenuRepositoryTests.cs" />
+    <Compile Include="KomodoInsuranceBadgesRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\KomodoClaims\KomodoClaims.csproj">
       <Project>{5ea88534-5e24-4ae6-a208-c6d31541d32f}</Project>
       <Name>KomodoClaims</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KomodoInsuranceBadges2\KomodoInsuranceBadges2.csproj">
+      <Project>{60253FC4-D3F1-4B1A-BDA4-12D0EA037A91}</Project>
+      <Name>KomodoInsuranceBadges2</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

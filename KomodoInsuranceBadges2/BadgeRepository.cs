@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KomodoInsuranceBadges
+namespace KomodoInsuranceBadges2
 {
     public class BadgeRepository
     {
@@ -20,9 +20,12 @@ namespace KomodoInsuranceBadges
         //Read
         public Dictionary<int, List<string>> GetAllBadges()
         {
-            return _badgeRepo;
+            if (_badgeRepo != null)
+                return _badgeRepo;
+            else
+                return null;
         }
-        
+
         //Update
         public void UpdateBadge(int badgeID, string newDoor)
         {
